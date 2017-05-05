@@ -14,4 +14,4 @@ Response is all available data for the location.
 In my case, i used response data and saved it to db so i can later search for available destinations on site.
 ###
 Use with ivm-gmaps-autocomplete.js in the same repo and u get nice combo for creating destinations.
-Run autocomplete input in geocode function and result is 100% valid, unless google map api is drunk :).
+Run autocomplete input in geocode function and result is 100% valid, unless google map api is drunk or something :)
