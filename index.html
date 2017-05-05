@@ -7,6 +7,7 @@
         <!-- jquery-->
 	    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="./js/ivm-gmaps-autocomplete.js"></script>
+        <script src="./js/ivm-aditional-locations.js"></script>
 
     </head>
 
@@ -25,6 +26,7 @@
             width:100%;
             padding:0 15px;
         }
+        #aditional-results,
         #location-results {
             list-style:none;
             padding:0;
@@ -32,6 +34,7 @@
             border:1px solid #ddd;
             box-shadow:0 5px 10px rgba(0 ,0 ,0 , 0.1);
         }
+        #aditional-results > li > a,
         #location-results > li > a {
             display:block;
             line-height:40px;
@@ -39,9 +42,11 @@
             cursor: pointer;
             color:#888;
         }
+        #aditional-results > li + li > a,
         #location-results > li + li > a {
             border-top:1px solid #ddd;
         }
+        #aditional-results > li > a:hover,
         #location-results > li > a:hover {
             background:#f5f5f5;
             color:#444;
@@ -50,9 +55,19 @@
     <body>
 
         <section>
+
+            <!-- main location -->
             <h3>Start Typing eg: <q>Belgrade</q></h3>
             <input id="location" name="locationName" type="text" placeholder="Enter city, address, postal code..." />
             <ul id="location-results"></ul>
+
+            <!-- aditional locations -->
+            <h3>Aditional Destibations</h3>
+            <form id="aditional-destinations"></form>
+            <ul id="aditional-results"></ul>
+            <br />
+            <button id="add-destination" class="uk-button uk-button-default">Add Destination</button>
+
         </section>
 
     </body>
