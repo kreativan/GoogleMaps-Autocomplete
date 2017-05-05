@@ -1,7 +1,7 @@
 # GoogleMaps-Autocomplete
 Simple google maps addresses jquery autocomplete. Start typing to get sugestions...
 
-## geocode
+## php geocode
 Also repo include's small php script that can be used with provided autocomplete.
 ###
 php scripot gets all available data about the desiered location.
