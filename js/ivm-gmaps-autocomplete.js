@@ -8,7 +8,7 @@ $(document).ready(function() {
         if(location.length > 2) {
 
             $.ajax({
-                url: 'http://maps.googleapis.com/maps/api/geocode/json?address='+ location +'&sensor=false',
+                url: 'https://maps.googleapis.com/maps/api/geocode/json?address='+ location +'&sensor=false',
                 success: function(data) {
                     console.log(data); // console
                     $('#location-results').append('<li><a title="'+ data.results[0].formatted_address +'">' + data.results[0].formatted_address + '</a></li>');
