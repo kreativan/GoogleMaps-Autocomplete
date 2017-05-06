@@ -5,6 +5,7 @@ Demo: https://lokomotivan.github.io/GoogleMaps-Autocomplete/
 
 ### How to use?
 ###### Include scripts from '/js' folder.
+You can add any number of fields you want, just make sure its wrapped in uniq id like two fields in example below:
 ```
 <!-- Start Location -->
 <h3>Start Location</h3>
@@ -12,6 +13,7 @@ Demo: https://lokomotivan.github.io/GoogleMaps-Autocomplete/
     <input class="gmap-autocomplete uk-input" name="start_location" type="text" placeholder="Enter city or/and addess" />
     <ul class="gmap-autocomplete-results"></ul>
 </div>
+
 <!-- End Location -->
 <h3>End Location</h3>
 <div id="end-location">
@@ -20,6 +22,7 @@ Demo: https://lokomotivan.github.io/GoogleMaps-Autocomplete/
 </div>
 ```
 ##### Dynamic Fields
+You can include repeating fields. All dynamic fields will same name so they would be submited as an array.
 ```
 <h4>Aditional Locations</h4>
 <div>
@@ -55,6 +58,23 @@ Demo: https://lokomotivan.github.io/GoogleMaps-Autocomplete/
         <input class="uk-button uk-button-primary uk-button-large" type="submit" name="test" />
     </div>
 </form>
+```
+And this is response you would get if you submit this form with php:
+```
+
+Array
+(
+    [start_location] => Belgrade, Serbia
+    [end_location] => Novi Sad, Serbia
+    [addon_location] => Array
+        (
+            [0] => Prokuplje, Serbia
+            [1] => Nis, Serbia
+            [2] => Aleksinac, Serbia
+        )
+
+    [test] => Submit Query
+)
 ```
 
 ## php geocode
