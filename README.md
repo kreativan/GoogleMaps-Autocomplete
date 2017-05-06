@@ -24,9 +24,37 @@ Demo: https://lokomotivan.github.io/GoogleMaps-Autocomplete/
 <h4>Aditional Locations</h4>
 <div>
     <button id="add-location" class="uk-button uk-button-default">Add Destination</button>
-    <form id="aditional-locations"></form>
+    <div id="aditional-locations"></div>
     <ul id="aditional-results"></ul>
 </div>
+```
+
+#### Form Example
+```
+<form action="./" method="post">
+    <!-- Start Location -->
+    <h3>Start Location</h3>
+    <div id="start-location">
+        <input class="gmap-autocomplete uk-input" name="start_location" type="text" placeholder="Enter city or/and addess" />
+        <ul class="gmap-autocomplete-results"></ul>
+    </div>
+    <!-- End Location -->
+    <h3>End Location</h3>
+    <div id="end-location">
+        <input class="gmap-autocomplete uk-input" name="end_location" type="text" placeholder="Enter city or/and addess" />
+        <ul class="gmap-autocomplete-results"></ul>
+    </div>
+
+    <h4>Aditional Destibations</h4>
+    <div>
+        <button id="add-location" class="uk-button uk-button-default">Add Destination</button>
+        <div id="aditional-locations"></div>
+        <ul id="aditional-results"></ul>
+    </div>
+    <div class="uk-margin">
+        <input class="uk-button uk-button-primary uk-button-large" type="submit" name="test" />
+    </div>
+</form>
 ```
 
 ## php geocode
