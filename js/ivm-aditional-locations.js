@@ -27,7 +27,7 @@ $(document).ready(function() {
         if(addLocation.length > 2) {
 
             $.ajax({
-                url: 'http://maps.googleapis.com/maps/api/geocode/json?address='+ addLocation +'&sensor=false',
+                url: 'https://maps.googleapis.com/maps/api/geocode/json?address='+ addLocation +'&sensor=false',
                 success: function(data) {
                     console.log(data); // console
                     $('#aditional-results').append('<li><a href="' + inputID + '" title="'+ data.results[0].formatted_address +'">' + data.results[0].formatted_address + '</a></li>');
