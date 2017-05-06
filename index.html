@@ -26,28 +26,24 @@
             width:100%;
             padding:0 15px;
         }
-        #aditional-results,
-        #location-results {
+        .gmap-autocomplete-results {
             list-style:none;
             padding:0;
             margin:0;
             border:1px solid #ddd;
             box-shadow:0 5px 10px rgba(0 ,0 ,0 , 0.1);
         }
-        #aditional-results > li > a,
-        #location-results > li > a {
+        .gmap-autocomplete-results > li > a {
             display:block;
             line-height:40px;
             padding:0 15px;
             cursor: pointer;
             color:#888;
         }
-        #aditional-results > li + li > a,
-        #location-results > li + li > a {
+        .gmap-autocomplete-results> li + li > a {
             border-top:1px solid #ddd;
         }
-        #aditional-results > li > a:hover,
-        #location-results > li > a:hover {
+        .gmap-autocomplete-results > li > a:hover {
             background:#f5f5f5;
             color:#444;
         }
@@ -56,17 +52,26 @@
 
         <section>
 
-            <!-- main location -->
-            <h3>Start Typing eg: <q>Belgrade</q></h3>
-            <input id="location" name="locationName" type="text" placeholder="Enter city, address, postal code..." />
-            <ul id="location-results"></ul>
+            <!-- Start Location -->
+            <h3>Start Location</h3>
+            <div id="start-location">
+                <input class="gmap-autocomplete uk-input" name="start-location" type="text" placeholder="Enter city or/and addess" />
+                <ul class="gmap-autocomplete-results"></ul>
+            </div>
+            <!-- End Location -->
+            <h3>End Location</h3>
+            <div id="end-location">
+                <input class="gmap-autocomplete uk-input" name="end-location" type="text" placeholder="Enter city or/and addess" />
+                <ul class="gmap-autocomplete-results"></ul>
+            </div>
 
             <!-- aditional locations -->
-            <h3>Aditional Locations</h3>
-            <form id="aditional-destinations"></form>
-            <ul id="aditional-results"></ul>
-            <br />
-            <button id="add-destination" class="uk-button uk-button-default">Add Destination</button>
+            <h4>Aditional Locations</h4>
+            <div>
+                <button id="add-location" class="uk-button uk-button-default">Add Location</button>
+                <form id="aditional-locations"></form>
+                <ul id="aditional-results"></ul>
+            </div>
 
         </section>
 

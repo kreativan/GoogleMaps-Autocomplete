@@ -2,16 +2,23 @@ $(document).ready(function() {
 
     var i = 0;
 
-    $("#add-destination").click(function(event) {
-        $("#aditional-destinations").append('<label><input id="' + (i++) + '" class="aditional-input uk-input" type="text" name="addon_dest"  /><button class="del_input">delete</button></label>');
+    // Add input
+    $("#add-location").click(function(event) {
+        var markup = '<label>';
+            markup += '<input id="' + (i++) + '" class="aditional-input uk-input" type="text" name="addon_location[]"  />';
+            markup += '<button class="del-input">delete</button>';
+            markup += '</label>';
+            $("#aditional-locations").append(markup);
     });
 
-    $(document).on("click", '.del_input', function(event) {
+    // delete input
+    $(document).on("click", '.del-input', function(event) {
         event.preventDefault();
         $(this).parent().remove();
     });
 
-    $(document).on("keypress change", '.aditional-input', function(event) {
+    // gmap ajax autocomplete
+    $(document).on("keypress", '.aditional-input', function(event) {
 
         $('#aditional-results').empty();
 
@@ -28,12 +35,21 @@ $(document).ready(function() {
             });
         }
 
+        // Asign value on click
         $(document).on("click", '#aditional-results a', function(event) {
             event.preventDefault();
             var href = $(this).attr('href');
             var setValue2 = $(this).attr('title');
             $("#"+href+".aditional-input").val(setValue2);
             $('#aditional-results').empty();
+        });
+
+        // remove results if input is less then 3 chars length
+        $('.aditional-input').on('change', function(e) {
+            var additionalInputVal = $(this).val();
+            if( additionalInputVal.length < 2 ) {
+                $('#aditional-results').empty();
+            }
         });
 
     });

@@ -3,6 +3,32 @@ Simple google maps addresses jquery autocomplete. Start typing to get sugestions
 ###
 Demo: https://lokomotivan.github.io/GoogleMaps-Autocomplete/
 
+### How to use?
+###### Include scripts from '/js' folder.
+```
+<!-- Start Location -->
+<h3>Start Location</h3>
+<div id="start-location">
+    <input class="gmap-autocomplete uk-input" name="start_location" type="text" placeholder="Enter city or/and addess" />
+    <ul class="gmap-autocomplete-results"></ul>
+</div>
+<!-- End Location -->
+<h3>End Location</h3>
+<div id="end-location">
+    <input class="gmap-autocomplete uk-input" name="end_location" type="text" placeholder="Enter city or/and addess" />
+    <ul class="gmap-autocomplete-results"></ul>
+</div>
+```
+##### Dynamic Fields
+```
+<h4>Aditional Locations</h4>
+<div>
+    <button id="add-location" class="uk-button uk-button-default">Add Destination</button>
+    <form id="aditional-locations"></form>
+    <ul id="aditional-results"></ul>
+</div>
+```
+
 ## php geocode
 Also repo include's small php script that can be used with provided autocomplete.
 ###
