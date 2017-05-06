@@ -1,9 +1,5 @@
 $(document).ready(function() {
 
-    /**
-    *   Aditional Locations
-    *
-    */
     var i = 0;
 
     $("#add-destination").click(function(event) {
@@ -15,7 +11,7 @@ $(document).ready(function() {
         $(this).parent().remove();
     });
 
-    $(document).on("keypress", '.aditional-input', function(event) {
+    $(document).on("keypress change", '.aditional-input', function(event) {
 
         $('#aditional-results').empty();
 
@@ -24,20 +20,13 @@ $(document).ready(function() {
         if(addLocation.length > 2) {
 
             $.ajax({
-                url: 'https://maps.googleapis.com/maps/api/geocode/json?address='+ addLocation +'&sensor=false',
+                url: 'http://maps.googleapis.com/maps/api/geocode/json?address='+ addLocation +'&sensor=false',
                 success: function(data) {
                     console.log(data); // console
                     $('#aditional-results').append('<li><a href="' + inputID + '" title="'+ data.results[0].formatted_address +'">' + data.results[0].formatted_address + '</a></li>');
                 }
             });
         }
-
-        $('.aditional-input').change(function(event) {
-            var addLocation = $(this).val();
-            if(addLocation.length < 2) {
-                $('#aditional-results').empty();
-            }
-        });
 
         $(document).on("click", '#aditional-results a', function(event) {
             event.preventDefault();
@@ -48,5 +37,6 @@ $(document).ready(function() {
         });
 
     });
+
 
 });

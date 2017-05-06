@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-    $('#location').keypress(function(){
+    $('#location').on('keypress change', function(e) {
 
         $('#location-results').empty();
 
@@ -8,7 +8,7 @@ $(document).ready(function() {
         if(location.length > 2) {
 
             $.ajax({
-                url: 'https://maps.googleapis.com/maps/api/geocode/json?address='+ location +'&sensor=false',
+                url: 'http://maps.googleapis.com/maps/api/geocode/json?address='+ location +'&sensor=false',
                 success: function(data) {
                     console.log(data); // console
                     $('#location-results').append('<li><a title="'+ data.results[0].formatted_address +'">' + data.results[0].formatted_address + '</a></li>');
@@ -16,13 +16,6 @@ $(document).ready(function() {
             });
         }
 
-    });
-
-    $('#location').change(function(event) {
-        var location = $(this).val();
-        if(location.length < 2) {
-            $('#location-results').empty();
-        }
     });
 
     $(document).on("click", '#location-results a', function(event) {
