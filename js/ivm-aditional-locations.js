@@ -4,6 +4,7 @@ $(document).ready(function() {
 
     // Add input
     $("#add-location").click(function(event) {
+        event.preventDefault();
         var markup = '<label>';
             markup += '<input id="' + (i++) + '" class="aditional-input uk-input" type="text" name="addon_location[]"  />';
             markup += '<button class="del-input">delete</button>';
