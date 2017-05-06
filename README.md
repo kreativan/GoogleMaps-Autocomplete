@@ -22,7 +22,7 @@ You can add any number of fields you want, just make sure its wrapped in uniq id
 </div>
 ```
 ##### Dynamic Fields
-You can include repeating fields. All dynamic fields will same name so they would be submited as an array.
+You can include repeating fields. All dynamic fields will have same name so they would be submited as an array.
 ```
 <h4>Aditional Locations</h4>
 <div>
